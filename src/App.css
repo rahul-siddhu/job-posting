@@ -1,38 +1,53 @@
-.App {
-  text-align: center;
+html, body {
+  height: 100%; /* Ensures the body takes up the full viewport height */
+  margin: 0;    /* Removes default margin */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#root {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  min-height: 100vh; /* Full height of the viewport */
 }
 
-.App-link {
-  color: #61dafb;
+.content {
+  flex: 1; /* Makes the content section take up available space */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+footer {
+  flex-shrink: 0; /* Keeps the footer at the bottom of the page */
+  background-color: #343a40; /* Dark background (Bootstrap bg-dark equivalent) */
+  color: white; /* Light text color */
+  text-align: center;
+  padding: 10px 0;
+}
+
+/* Adjust buttons and input field as before */
+.todo-buttons {
+  margin-right: 10px; /* Adds space to the right of the button */
+  margin-left: 10px;  /* Adds space to the left of the button */
+}
+
+.input-field {
+  margin-right: 10px; /* Adds spacing to the right of input fields */
+}
+
+.no-underline {
+  color: rgb(113, 177, 207); /* Your desired color */
+  text-decoration: none; /* Removes the underline */
+}
+
+.no-underline:hover {
+  color: red; /* Optional: change color on hover */
+}
+
+/* TodoItem.css */
+
+/* Add hover effect for the card */
+.todo-item-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.todo-item-card:hover {
+  transform: perspective(1000px) rotateX(3deg) rotateY(-3deg);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
